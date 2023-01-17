@@ -1,0 +1,75 @@
+{
+  "name": "telem_proxy",
+  "description": "",
+  "version": "0.0.0",
+  "homepage": "",
+  "private": true,
+  "keywords": [
+    "feathers"
+  ],
+  "author": {},
+  "contributors": [],
+  "bugs": {},
+  "engines": {
+    "node": ">= 16.14.0"
+  },
+  "feathers": {
+    "language": "js",
+    "packager": "npm",
+    "database": "sqlite",
+    "framework": "koa",
+    "transports": [
+      "rest",
+      "websockets"
+    ],
+    "schema": "typebox"
+  },
+  "directories": {
+    "lib": "src",
+    "test": "test"
+  },
+  "files": [
+    "lib/client.js",
+    "lib/**/*.d.ts"
+  ],
+  "main": "src/client",
+  "type": "module",
+  "scripts": {
+    "start": "node src",
+    "dev": "nodemon src/",
+    "prettier": "npx prettier \"**/*.js\" --write",
+    "mocha": "cross-env NODE_ENV=test mocha test/ --recursive --exit",
+    "test": "cross-env NODE_ENV=test npm run migrate && npm run mocha",
+    "bundle:client": "npm pack --pack-destination ./public",
+    "migrate": "knex migrate:latest",
+    "migrate:make": "knex migrate:make"
+  },
+  "dependencies": {
+    "@feathersjs/adapter-commons": "^5.0.0-pre.34",
+    "@feathersjs/authentication": "^5.0.0-pre.34",
+    "@feathersjs/authentication-client": "^5.0.0-pre.34",
+    "@feathersjs/authentication-local": "^5.0.0-pre.34",
+    "@feathersjs/authentication-oauth": "^5.0.0-pre.34",
+    "@feathersjs/configuration": "^5.0.0-pre.34",
+    "@feathersjs/errors": "^5.0.0-pre.34",
+    "@feathersjs/feathers": "^5.0.0-pre.34",
+    "@feathersjs/knex": "^5.0.0-pre.34",
+    "@feathersjs/koa": "^5.0.0-pre.34",
+    "@feathersjs/schema": "^5.0.0-pre.34",
+    "@feathersjs/socketio": "^5.0.0-pre.34",
+    "@feathersjs/transport-commons": "^5.0.0-pre.34",
+    "@feathersjs/typebox": "^5.0.0-pre.34",
+    "knex": "^2.3.0",
+    "sqlite3": "^5.1.4",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "@feathersjs/cli": "^5.0.0-pre.34",
+    "@feathersjs/rest-client": "^5.0.0-pre.34",
+    "axios": "^1.2.0",
+    "cross-env": "^7.0.3",
+    "mocha": "^10.1.0",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.1"
+  }
+}
