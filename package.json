@@ -35,7 +35,7 @@
   "main": "src/client",
   "type": "module",
   "scripts": {
-    "start": "node src",
+    "start": "NODE_ENV=production node src",
     "dev": "nodemon src/",
     "prettier": "npx prettier \"**/*.js\" --write",
     "mocha": "cross-env NODE_ENV=test mocha test/ --recursive --exit",

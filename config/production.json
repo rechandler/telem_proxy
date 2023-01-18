@@ -1,6 +1,6 @@
 {
-  "host": "localhost",
-  "port": 3030,
+  "host": "https://telemetry-proxy.herokuapp.com/",
+  "port": 80,
   "public": "./public/",
   "origins": [
     "*"
